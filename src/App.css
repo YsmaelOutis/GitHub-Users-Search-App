@@ -1,0 +1,383 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  background-color: #141D2F;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+main {
+  height: 70%;
+  min-width: 800px;
+  width: 50%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+main header {
+  display: flex;
+  justify-content: space-between;
+}
+main header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+main header button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: #FFFFFF;
+  border: none;
+  letter-spacing: 0.125rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+main header button svg path {
+  transition: all 0.3s;
+}
+main header button:hover {
+  color: #90A4D4;
+}
+main header button:hover svg path {
+  fill: #90A4D4;
+}
+main .search-bar {
+  width: 100%;
+  position: relative;
+}
+main .search-bar img {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+main .search-bar img:hover {
+  transform: scale(1.15) translateY(-50%);
+  filter: drop-shadow(0 0 0.25rem #0079FF);
+}
+main .search-bar img:active {
+  transform: scale(1) translateY(-50%);
+}
+main .search-bar input {
+  width: 100%;
+  height: 4rem;
+  border-radius: 1rem;
+  padding: 1rem 1rem 1rem 3.5rem;
+  border: none;
+  background-color: #1E2A47;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+main .search-bar input::-moz-placeholder {
+  color: #FFFFFF;
+}
+main .search-bar input::placeholder {
+  color: #FFFFFF;
+}
+main .search-bar input:focus {
+  outline: none;
+  box-shadow: 0 0 0.4rem #0079FF;
+}
+main .search-bar .error {
+  position: absolute;
+  top: 50%;
+  right: 17%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: #F74646;
+}
+main .search-bar button {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  height: 80%;
+  width: 12%;
+  border-radius: 0.6rem;
+  border: none;
+  background-color: #0079FF;
+  color: #FFFFFF;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+main .search-bar button:hover {
+  background-color: #60ABFF;
+}
+main .search-bar button:active {
+  color: #0079FF;
+  transform: translateY(-50%) scale(0.9);
+}
+main .user-card {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  background-color: #1E2A47;
+  border-radius: 1rem;
+  padding: 3rem;
+}
+main .user-card .avatar-container-mobile {
+  display: none;
+}
+main .user-card img {
+  height: 117px;
+  width: 117px;
+  border-radius: 50%;
+  outline: 2px solid #141D2F;
+}
+main .user-card .user-and-date {
+  display: flex;
+  justify-content: space-between;
+}
+main .user-card .user-and-date a {
+  color: #0079FF;
+}
+main .user-card .user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+main .user-card .user-info .bio .no-available-info {
+  color: #697C9A;
+}
+main .user-card .user-info .stats {
+  display: flex;
+  justify-content: space-between;
+  background-color: #141D2F;
+  border-radius: 1rem;
+  height: 5.5rem;
+  padding: 1rem 2rem;
+}
+main .user-card .user-info .stats h4 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+main .user-card .user-info .stats p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+main .user-card .user-info .links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+main .user-card .user-info .links div {
+  display: flex;
+  gap: 1rem;
+}
+main .user-card .user-info .links div a {
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+}
+main .user-card .user-info .links div a:hover {
+  text-decoration: underline;
+}
+main .user-card .user-info .links div .no-available-info {
+  color: #697C9A;
+}
+main .user-card .user-info .links div svg {
+  height: 20px;
+  width: 20px;
+}
+main .user-card .user-info .links div svg path {
+  fill: #FFFFFF;
+}
+main .user-card .user-info .links div svg path.no-available-info {
+  fill: #697C9A;
+}
+
+body[data-theme=light] #root {
+  background-color: #F6F8FF;
+}
+body[data-theme=light] main header h1 {
+  color: #1E2A47;
+}
+body[data-theme=light] main header button {
+  color: #4B6A9B;
+}
+body[data-theme=light] main header button svg path {
+  fill: #4B6A9B;
+}
+body[data-theme=light] main header button:hover {
+  color: #141D2F;
+}
+body[data-theme=light] main header button:hover svg path {
+  fill: #141D2F;
+}
+body[data-theme=light] main .search-bar input {
+  background-color: #FEFEFE;
+  color: #1E2A47;
+}
+body[data-theme=light] main .search-bar input::-moz-placeholder {
+  color: #1E2A47;
+}
+body[data-theme=light] main .search-bar input::placeholder {
+  color: #1E2A47;
+}
+body[data-theme=light] main .search-bar .error {
+  color: #F74646;
+}
+body[data-theme=light] main .search-bar button {
+  background-color: #0079FF;
+  color: #FFFFFF;
+}
+body[data-theme=light] main .search-bar button:hover {
+  background-color: #60ABFF;
+}
+body[data-theme=light] main .user-card {
+  background-color: #FEFEFE;
+  color: #1E2A47;
+}
+body[data-theme=light] main .user-card img {
+  outline: 2px solid #D7DCEF;
+}
+body[data-theme=light] main .user-card .user-and-date a {
+  color: #0079FF;
+}
+body[data-theme=light] main .user-card .user-and-date p {
+  color: #4B6A9B;
+}
+body[data-theme=light] main .user-card .user-info .bio {
+  color: #4B6A9B;
+}
+body[data-theme=light] main .user-card .user-info .stats {
+  background-color: #F6F8FF;
+}
+body[data-theme=light] main .user-card .user-info .stats h4 {
+  color: #4B6A9B;
+}
+body[data-theme=light] main .user-card .user-info .links div svg path {
+  fill: #4B6A9B;
+}
+body[data-theme=light] main .user-card .user-info .links div a {
+  color: #4B6A9B;
+}
+body[data-theme=light] main .user-card .user-info .links div p {
+  color: #4B6A9B;
+}
+body[data-theme=light] main .user-card .user-info .links div .no-available-info {
+  color: #98A7BD;
+}
+body[data-theme=light] main .user-card .user-info .links div path.no-available-info {
+  fill: #98A7BD;
+}
+
+@media (width < 800px) {
+  #root {
+    height: 100svh;
+    width: 100%;
+    overflow: scroll;
+  }
+  main {
+    min-width: 90%;
+    height: 100%;
+  }
+  main header {
+    margin-top: 1rem;
+  }
+  main header button {
+    font-weight: bold;
+  }
+  main .search-bar form p.error {
+    font-size: 0.8rem;
+    right: 25%;
+  }
+  main .search-bar form button {
+    width: 20%;
+  }
+  main .user-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  main .user-card .avatar-container-desktop {
+    display: none;
+  }
+  main .user-card .avatar-mobile-and-username-with-date {
+    display: flex;
+    gap: 2rem;
+  }
+  main .user-card .avatar-mobile-and-username-with-date .avatar-container-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .user-card .avatar-mobile-and-username-with-date .user-and-date {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  main .user-card .user-info .stats {
+    padding: 1rem;
+  }
+  main .user-card .user-info .stats div {
+    display: grid;
+    display: grid;
+    align-items: center;
+    text-align: center;
+  }
+  main .user-card .user-info .links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@media (width < 500px) {
+  main .search-bar form p.error {
+    right: 5%;
+    top: 120%;
+  }
+}
+@media (width < 400px) {
+  main .search-bar form input {
+    padding: 0.5rem 0.5rem 0.5rem 3rem;
+  }
+  main .search-bar form input::-moz-placeholder {
+    font-size: 0.7rem;
+  }
+  main .search-bar form input::placeholder {
+    font-size: 0.7rem;
+  }
+  main .user-card .avatar-mobile-and-username-with-date .avatar-container-mobile img {
+    height: 70px;
+    width: 70px;
+  }
+  main .user-card .avatar-mobile-and-username-with-date .user-and-date .user h2 {
+    font-size: 1.3rem;
+  }
+  main .user-card .avatar-mobile-and-username-with-date .user-and-date a {
+    font-size: 1rem;
+  }
+  main .user-card .avatar-mobile-and-username-with-date .user-and-date p {
+    font-size: 0.9rem;
+  }
+  main .user-card .user-info .bio p {
+    font-size: 1rem;
+  }
+  main .user-card .user-info .stats {
+    padding: 0.75rem;
+  }
+  main .user-card .user-info .stats h4 {
+    font-size: 0.8rem;
+  }
+  main .user-card .user-info .stats p {
+    font-size: 1.2rem;
+  }
+  main .user-card .user-info .links div a, main .user-card .user-info .links div p {
+    font-size: 0.9rem;
+  }
+}/*# sourceMappingURL=App.css.map */
