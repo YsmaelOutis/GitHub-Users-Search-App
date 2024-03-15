@@ -82,8 +82,8 @@ function App() {
 		// Fetch the data for one of the interesting users
 		getInterestingUser()
 
-		// Set the theme based on the user's preference
-		setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light")
+		// Set the theme based on the user's preference // Defaults to dark mode
+		setTheme(window.matchMedia('(prefers-color-scheme: light)').matches ? "light" : "dark")
 	}, [])
 
 	return (
